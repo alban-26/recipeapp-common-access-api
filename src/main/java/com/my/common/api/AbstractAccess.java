@@ -31,6 +31,11 @@ public abstract class AbstractAccess<REPOSITORY extends Repository<T, ID>, T, ID
     }
 
     @Override
+    public PageResult<T> getAllByUser(UserId userId, PageRequest pageRequest) {
+        return repository.findAllByUser(userId, pageRequest);
+    }
+
+    @Override
     public T save(T item) {
         if (isNew(item))
             return repository.save(item);

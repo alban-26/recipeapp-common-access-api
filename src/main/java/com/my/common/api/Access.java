@@ -42,6 +42,22 @@ public interface Access<T, ID> {
      */
     List<T> getAllByUser(UserId userId);
 
+    /**
+     * Returns a paginated list of entities that belong to the specified user.
+     *
+     * <p>This method is intended for endpoints that support pagination. The
+     * returned {@link PageResult} contains both the requested page of entities
+     * and the associated pagination metadata (e.g. total number of elements).</p>
+     *
+     * @param userId the unique identifier of the user whose entities should be
+     *               retrieved; must not be {@code null}.
+     * @param pageRequest the pagination settings defining which page should be
+     *                    returned and how many entities it should contain; must
+     *                    not be {@code null}.
+     * @return a {@link PageResult} containing the requested page of entities and
+     *         the corresponding pagination metadata; never {@code null}.
+     */
+    PageResult<T> getAllByUser(UserId userId, PageRequest pageRequest);
 
     /**
      * Saves the given entity.
