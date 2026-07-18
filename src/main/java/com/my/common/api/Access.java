@@ -1,5 +1,8 @@
 package com.my.common.api;
 
+import com.my.common.api.pagination.PageRequest;
+import com.my.common.api.pagination.PageResult;
+
 import java.util.List;
 import java.util.Optional;
 

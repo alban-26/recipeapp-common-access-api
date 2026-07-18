@@ -1,8 +1,9 @@
-package com.my.common.api;
+package com.my.common.api.pagination;
 
 public record PageRequest(
         int page,
-        int size
+        int size,
+        String searchQuery
 ) {
     public PageRequest {
         if (page < 0) {

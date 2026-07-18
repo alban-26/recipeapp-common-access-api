@@ -1,4 +1,4 @@
-package com.my.common.api;
+package com.my.common.api.pagination;
 
 import java.util.List;
 

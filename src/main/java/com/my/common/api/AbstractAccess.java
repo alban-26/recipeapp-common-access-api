@@ -1,5 +1,7 @@
 package com.my.common.api;
 
+import com.my.common.api.pagination.PageRequest;
+import com.my.common.api.pagination.PageResult;
 import jakarta.inject.Inject;
 import lombok.NonNull;
 
