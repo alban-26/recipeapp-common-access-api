@@ -44,11 +44,6 @@ public interface Repository<T, ID extends Identifiable> {
      */
     List<T> findAllByUser(UserId userId);
 
-    PageResult<T> findAllByUser(
-            UserId userId,
-            PageRequest pageRequest
-    );
-
     /**
      * Saves a new entity.
      *

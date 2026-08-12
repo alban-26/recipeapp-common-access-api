@@ -1,21 +1,14 @@
 package com.my.common.api.pagination;
 
-public record PageRequest(
-        int page,
-        int size,
-        String searchQuery
-) {
-    public PageRequest {
-        if (page < 0) {
-            throw new IllegalArgumentException("Page must not be negative");
-        }
+public interface PageRequest {
 
-        if (size <= 0 || size > 100) {
-            throw new IllegalArgumentException("Size must be between 1 and 100");
-        }
-    }
+    int page();
 
-    public int offset() {
-        return page * size;
+    int size();
+
+    String searchQuery();
+
+    default int offset() {
+        return page() * size();
     }
 }
